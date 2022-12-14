@@ -10,14 +10,18 @@ import javax.persistence.*;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "role")
-public class Role {
+@Table(name = "provider")
+public class Provider {
     @EqualsAndHashCode.Include
-    @Id //Se generara de forma manual
-    private Integer idRole;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idProvider;
 
-    @Column(length = 100,nullable = false)
+    @Column(length = 50, nullable = false)
     private String name;
+
+    @Column(length = 150, nullable = false)
+    private String address;
 
     @Column(nullable = false)
     private Boolean enabled;

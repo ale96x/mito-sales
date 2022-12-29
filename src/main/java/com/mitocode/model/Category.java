@@ -23,4 +23,9 @@ public class Category {
     private String description;
     @Column(nullable = false)
     private Boolean enabled;
+
+    public Category(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

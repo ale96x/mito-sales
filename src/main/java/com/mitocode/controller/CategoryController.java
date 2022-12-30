@@ -31,9 +31,9 @@ public class CategoryController {
 
 
     //@PreAuthorize("@authService.checkRole('readAll')")
-    @PreAuthorize("hasAuthority('ADMIN')") //Se determina que solo los usuarios con rol ADMIN podran realizar la peticion a este EndPoint
+    //@PreAuthorize("hasAuthority('ADMIN')") //Se determina que solo los usuarios con rol ADMIN podran realizar la peticion a este EndPoint
     @GetMapping
-    public ResponseEntity<List<CategoryDTO>> redAll() throws Exception{
+    public ResponseEntity<List<CategoryDTO>> readAll() throws Exception{
         List<CategoryDTO> list = service.readAll()
                 .stream()
                 .map(cat -> mapper.map(cat, CategoryDTO.class))

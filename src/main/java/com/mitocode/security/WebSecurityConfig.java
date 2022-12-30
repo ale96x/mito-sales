@@ -52,7 +52,7 @@ public class WebSecurityConfig {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll() //.()hasAuthority("ADMIN")
-                .antMatchers("/categories/**").permitAll()
+                //.antMatchers("/categories/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
